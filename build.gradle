@@ -18,7 +18,7 @@ repositories {
 dependencies {
     def junitVersion = '5.9.0'
     testImplementation "org.junit.jupiter:junit-jupiter:$junitVersion"
-    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine$junitVersion"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junitVersion"
 }
 
 test {
@@ -37,5 +37,5 @@ clean{
 }
 
 assemble {
-    depondsOn javadoc
+    dependsOn javadoc
 }
