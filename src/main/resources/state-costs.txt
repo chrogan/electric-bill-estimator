@@ -1,0 +1,51 @@
+Connecticut 24.81
+Maine 25.75
+Massachusetts 23.85
+New Hampshire 23.05
+Rhode Island 19.92
+Vermont 20.49
+New Jersey 17.00
+New York 21.85
+Pennsylvania 15.20
+Illinois 15.26
+Indiana 15.16
+Michigan 17.83
+Ohio 13.74
+Wisconsin 16.10
+Iowa 14.08
+Kansas 14.12
+Minnesota 14.45
+Missouri 11.95
+Nebraska 11.08
+North Dakota 11.89
+South Dakota 12.62
+Delaware 14.30
+DC 14.76
+Florida 13.58
+Georgia 14.40
+Maryland 14.21
+North Carolina 12.14
+South Carolina 13.97
+Virginia 13.02
+West Virginia 13.98
+Alabama 14.28
+Kentucky 12.81
+Mississippi 13.11
+Tennessee 12.04
+Arkansas 12.19
+Louisiana 11.97
+Oklahoma 12.42
+Texas 13.15
+Arizona 13.21
+Colorado 13.82
+Idaho 10.29
+Montana 11.20
+Nevada 13.56
+New Mexico 12.95
+Utah 10.66
+Wyoming 11.51
+California	27.02
+Oregon	11.56
+Washington	10.34
+Alaska	24.03
+Hawaii	43.11
