@@ -1,3 +1,5 @@
+
+
 public class Electricity {
 
 //COST = KWH
@@ -5,83 +7,98 @@ public class Electricity {
 //      KW = (WATT / 1000)
 //        WATT = (AMP * VOLT)
 
-
   //Fields
-  public static double totalMonthlyBill = 0;
-  public static double totalYearlyBill = 0;
-  public static double powerPerDevice = 0;
-  public static double totalPower = 0;
-  public static double deviceKWH = 0;
+  public static double totalMonthlyBill;
+  public static double totalYearlyBill;
+  public static double powerPerDevice;
+  public static double totalPower;
+  public static double deviceKWH;
 
-  Electricity electricity = new Electricity();
 
   //Constructors
   public Electricity() {
+
   }
+
+  public Electricity(Appliance appliance) {
+    double volts = appliance.getVoltage();
+    double amps = appliance.getAmps();
+    double hours = appliance.getHours();
+  }
+
 
   //METHODS
-  //TODO create cost conversions
   private double monthlyPriceEstimator(double price) {
-    return electricity.totalMonthlyBill = getTotalPower() * price;
+    return totalMonthlyBill = getTotalPower() * price;
   }
+
   private double yearlyPriceEstimator() {
-    return electricity.totalYearlyBill = getTotalMonthlyBill() * 12;
+    return totalYearlyBill = getTotalMonthlyBill() * 12;
 
   }
-  //TODO create power calculator (per devices)
 
   //returns each device's power in kW
-  private double devicePowerCalculator(double voltage, double current) {
-    Electricity electricity = new Electricity();
-    return electricity.powerPerDevice = current * voltage / 1000.0;
+  private double devicePowerCalculator(double volts, double amps) {
+
+    return this.powerPerDevice = (volts * amps)/ 1000.0;
   }
 
-  private double deviceKWHCalculator(double hours){
-    return electricity.deviceKWH = getPowerPerDevice() * hours;
+  private double deviceKWHCalculator(double hours) {
+    return deviceKWH = getPowerPerDevice() * hours;
   }
 
   //TODO create totalPower
   private double totalPowerCalculator(double[] devicesPower) {
     //TODO getPowerCalculator for each device and multiply by number of devices
     //then multiply that by 30 days
-    for(double device: devicesPower){
-      totalPower += device.getPowerPerDevice();
+    for (double device : devicesPower) {
+      // totalPower += device.getPowerPerDevice();
     }
     return totalPower;
   }
 
+  //ACCESSORS AND MODIFIERS
 
 
-  //accessors and modifiers
+  private static void setTotalMonthlyBill(double totalMonthlyBill) {
+    Electricity.totalMonthlyBill = totalMonthlyBill;
+  }
 
   public static double getTotalMonthlyBill() {
     return totalMonthlyBill;
+  }
+
+  private static void setTotalYearlyBill(double totalYearlyBill) {
+    Electricity.totalYearlyBill = totalYearlyBill;
   }
 
   public static double getTotalYearlyBill() {
     return totalYearlyBill;
   }
 
+  private static void setPowerPerDevice(double powerPerDevice) {
+    Electricity.powerPerDevice = powerPerDevice;
+  }
 
   public static double getPowerPerDevice() {
     return powerPerDevice;
   }
 
-
+  private static void setTotalPower(double totalPower) {
+    Electricity.totalPower = totalPower;
+  }
 
   public static double getTotalPower() {
     return totalPower;
   }
 
-
+  private static void setDeviceKWH(double deviceKWH) {
+    Electricity.deviceKWH = deviceKWH;
+  }
 
   public static double getDeviceKWH() {
     return deviceKWH;
   }
 
-
-
-
-  //accessors and modifiers
 
 }
