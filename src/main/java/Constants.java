@@ -1,4 +1,9 @@
 public enum Constants {
+  AMPS,
+  COST,
+  ELECTRICITY,
   KW,
-  KWH
+  KWH,
+  VOLT,
+  WATT
 }
