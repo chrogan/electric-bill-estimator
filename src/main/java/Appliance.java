@@ -1,51 +1,52 @@
+
+
 public class Appliance {
 
 
   //FIELDS
-    public static double voltage=120.0;
-    public static double amps=12.5;
-    public static double hours=10;
+  public double voltage = 120.0;
+  public double amps = 12.5;
+  public double hours = 10;
 
 
-    //CONSTRUCTORS
-    public Appliance(){
+  //CONSTRUCTORS
+  public Appliance() {
 
-    }
+  }
 
-    public Appliance(double voltage, double amps, double hours){
-   setVoltage(voltage );
-   setAmps(amps);
-   setHours(hours);
-      // Call the setters
-    }
+  public Appliance(double voltage, double amps, double hours) {
+    this.voltage = setVoltage(voltage);
+    this.amps = setAmps(amps);
+    this.hours = setHours(hours);
+  }
 
 
-  public static double getVoltage() {
+  public double getVoltage() {
     return voltage;
   }
 
-  public static void setVoltage(double voltage) {
-    Appliance.voltage = voltage;
+  public double setVoltage(double voltage) {
+    return this.voltage = voltage;
   }
 
-  public static double getAmps() {
+  public double getAmps() {
     return amps;
   }
 
-  public static void setAmps(double amps) {
-    Appliance.amps = amps;
+  public double setAmps(double amps) {
+    return this.amps = amps;
   }
 
-  public static double getHours() {
+  public double getHours() {
     return hours;
   }
 
-  public static void setHours(double hours) {
-    Appliance.hours = hours;
+  public double setHours(double hours) {
+    return this.hours = hours;
   }
 
 
-  }
+}
 
 
 

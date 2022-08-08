@@ -14,6 +14,11 @@ public class Main {
     Appliance microwave = new Appliance(240, 20.0,0.5);//voltage=240, Amps= 20, hours=0.5
     Appliance lighting= new Appliance();//voltage=
 
+    Electricity electricity = new Electricity(AC);
+
+
+    double power = electricity.getPowerPerDevice();
+    System.out.println(power);
 
   }
 
