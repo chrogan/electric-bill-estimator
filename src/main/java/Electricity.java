@@ -23,6 +23,7 @@ public static List<Appliance> devices = new ArrayList<>();
     this.amps = appliance.getAmps();
     this.hours = appliance.getHours();
     devices.add(appliance);
+
   }
 
 
@@ -35,9 +36,11 @@ public static List<Appliance> devices = new ArrayList<>();
     for(Appliance device : devices){
       Electricity electricity = new Electricity(device);
        totalPower += electricity.getDeviceKWH();
+
     }
     return totalPower;
   }
+
 
   // Returns in kWh/power per hours
   private double deviceKWH() {
