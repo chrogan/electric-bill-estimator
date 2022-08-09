@@ -1,3 +1,5 @@
+
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,38 +24,27 @@ public static List<Appliance> devices = new ArrayList<>();
     this.volts = appliance.getVoltage();
     this.amps = appliance.getAmps();
     this.hours = appliance.getHours();
-    devices.add(appliance);
 
-  }
 
 
   //METHODS
 
   //TODO create totalPower
   private double totalPowerCalculator() {
-    //TODO sum of getPowerCalculator for each appliance
+    //TODO getPowerCalculator for each device and multiply by number of devices
+    double totalPower = 0;
 
-    for(Appliance device : devices){
-      Electricity electricity = new Electricity(device);
-       totalPower += electricity.getDeviceKWH();
-
-    }
     return totalPower;
   }
-
-
-  // Returns in kWh/power per hours
-  private double deviceKWH() {
-    double deviceKWH = devicePower() * hours;
+  private double deviceKWHCalculator() {
+    deviceKWH = devicePower() * hours;
     return deviceKWH;
   }
 
-  //Returns in kW/power
   private double devicePower() {
     double result = (volts * amps)/ 1000.0;
     return result;
   }
-
 
   //ACCESSORS AND MODIFIERS
 
@@ -61,9 +52,11 @@ public static List<Appliance> devices = new ArrayList<>();
     return totalPowerCalculator();
   }
   public double getDeviceKWH() {
-    return deviceKWH();
+    return deviceKWHCalculator();
   }
-  public double getDevicePower() {
+  public double getPowerPerDevice() {
     return devicePower();
   }
+
+}
 }
