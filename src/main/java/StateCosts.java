@@ -6,11 +6,20 @@ import java.util.Scanner;
 public class StateCosts {
 
   public static void main(String[] args) throws Exception {
-
     String line = "";
     String splitBy = ",";
 
-//  This is used to print out the entire file for testing purposes. *Intentionally left out*
+    try {
+      String Montana = Files.readAllLines(Paths.get("src/main/resources/state-costs.csv")).get(41);
+      String[] states = Montana.split(splitBy);
+      double RATES = Double.parseDouble(states[1]);
+      System.out.println(RATES);
+
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+
+    //  This is used to print out the entire file for testing purposes. *Intentionally left out*
 //    try {
 //      //parsing a CSV file into Scanner class Constructor
 //      BufferedReader br = new BufferedReader(new FileReader("src/main/resources/state-costs.csv"));
@@ -24,14 +33,5 @@ public class StateCosts {
 //      e.printStackTrace();
 //    }
 
-    try {
-      String Montana = Files.readAllLines(Paths.get("src/main/resources/state-costs.csv")).get(41);
-      String[] states = Montana.split(splitBy);
-      double RATES = Double.parseDouble(states[1].toString());
-      System.out.println(RATES);
-
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
   }
 }
