@@ -43,8 +43,17 @@ Created by: Blake Ellsworth, Chris Logan, Angela Kwarkoh
   Estimate Cost is calculated by multiplying the kWh by the cost of electricity (6.3496¢)
   (Cost = 9.576 * 0.063496¢ = 0.6080)
 
-    * References:
-    * Estimate costs per state:
-      https://www.eia.gov/electricity/monthly/epm_table_grapher.php?t=epmt_5_6_a
-    * Cost calculator and Watt conversions added in docs folder.
+
+* A sample of how the information should be displayed to the user is as follows:
+  "Your Television daily cost is: $xx"
+  "Your Television weekly cost is: $xx"
+  "Your Television 30-day cost is: $xx"
+  "Your Television annual cost is: $xx"
+  "Your total electric cost from all appliances is: $xx"
+  
+  
+* References:
+  * Estimate costs per state:
+    https://www.eia.gov/electricity/monthly/epm_table_grapher.php?t=epmt_5_6_a
+  * Cost calculator and Watt conversions added in docs folder.
     
