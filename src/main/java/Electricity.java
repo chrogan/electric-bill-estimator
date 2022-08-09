@@ -5,7 +5,6 @@ public class Electricity {
 //      KW = (WATT / 1000)
 //        WATT = (AMP * VOLT)
 
-
   //Fields
   public static double totalMonthlyBill = 0;
   public static double totalYearlyBill = 0;
@@ -24,6 +23,7 @@ public class Electricity {
   private double monthlyPriceEstimator(double price) {
     return electricity.totalMonthlyBill = getTotalPower() * price;
   }
+
   private double yearlyPriceEstimator() {
     return electricity.totalYearlyBill = getTotalMonthlyBill() * 12;
 
@@ -36,7 +36,7 @@ public class Electricity {
     return electricity.powerPerDevice = current * voltage / 1000.0;
   }
 
-  private double deviceKWHCalculator(double hours){
+  private double deviceKWHCalculator(double hours) {
     return electricity.deviceKWH = getPowerPerDevice() * hours;
   }
 
@@ -44,13 +44,11 @@ public class Electricity {
   private double totalPowerCalculator(double[] devicesPower) {
     //TODO getPowerCalculator for each device and multiply by number of devices
     //then multiply that by 30 days
-    for(double device: devicesPower){
+    for (double device : devicesPower) {
       totalPower += device.getPowerPerDevice();
     }
     return totalPower;
   }
-
-
 
   //accessors and modifiers
 
@@ -62,11 +60,9 @@ public class Electricity {
     return totalYearlyBill;
   }
 
-
   public static double getPowerPerDevice() {
     return powerPerDevice;
   }
-
 
 
   public static double getTotalPower() {
@@ -74,13 +70,9 @@ public class Electricity {
   }
 
 
-
   public static double getDeviceKWH() {
     return deviceKWH;
   }
-
-
-
 
   //accessors and modifiers
 
