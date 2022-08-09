@@ -1,22 +1,41 @@
 public class Bill {
 
 
-
+  //FIELDS
   double KWH;
-  double totalPower;
+  double rate = 0.1374;
 
-
-  public Bill(){
+  //CONSTRUCTORS
+  public Bill() {
   }
 
-  public Bill(Electricity electricity){
+  public Bill(Electricity electricity) {
     this.KWH = electricity.getDeviceKWH();
-    this.totalPower = electricity.getTotalPower();
   }
-  //Bill for one device would be cool;
-  //TODO we need to get the price for a day
-  //TODO bill for a week
-  //TODO bill for a month
-  //TODO bill for a year
+
+
+  //METHODS
+  private double deviceBillDay() {
+    double result = KWH * rate;
+    return result;
+  }
+
+  private double billWeek() {
+    double result = billDay() * 7;
+    return result;
+  }
+
+  private double billMonth() {
+    double result = billDay() * 30;
+    return result;
+  }
+
+  private double billYear() {
+    double result = billDay() * 365;
+    return result;
+  }
+
+  //ACCESSORS
+
 
 }

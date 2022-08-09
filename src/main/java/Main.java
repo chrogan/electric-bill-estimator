@@ -1,3 +1,5 @@
+
+
 public class Main {
 
   /**
@@ -15,16 +17,15 @@ public class Main {
     Appliance lighting= new Appliance();//voltage=
 
     Electricity electricity = new Electricity(tv);
-
+    Electricity electricity1 = new Electricity(AC);
 
     double power = electricity.getDevicePower();
-    double Kwh = electricity.getDeviceKWH();
-    double totalKWH = electricity.getTotalPower();
+    double KWH = electricity.getDeviceKWH();
 
-    System.out.println(Electricity.devices);
     System.out.println(power);
-    System.out.println(Kwh);
-    System.out.println(totalKWH);
+    System.out.println(KWH);
+    System.out.println(Electricity.devices);
+
 
   }
 
