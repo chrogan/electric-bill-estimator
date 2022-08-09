@@ -1,6 +1,3 @@
-import java.util.ArrayList;
-import java.util.List;
-
 public class Electricity {
 
   //Fields
@@ -14,12 +11,12 @@ public class Electricity {
   public Electricity() {
 
   }
+
   public Electricity(Appliance appliance) {
     this.volts = appliance.getVoltage();
     this.amps = appliance.getAmps();
     this.hours = appliance.getHours();
   }
-
 
   //METHODS
 
@@ -32,16 +29,16 @@ public class Electricity {
   //Returns in kW/power
   private double devicePower() {
 
-    double result = (volts * amps)/ 1000.0;
+    double result = (volts * amps) / 1000.0;
     return result;
   }
-
 
   //ACCESSORS AND MODIFIERS
 
   public double getDeviceKWH() {
     return deviceKWH();
   }
+
   public double getDevicePower() {
     return devicePower();
   }

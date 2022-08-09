@@ -9,8 +9,6 @@ public class Appliance {
   public double hours = 10;
 
 
-
-
   //CONSTRUCTORS
   public Appliance() {
 
