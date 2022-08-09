@@ -43,14 +43,12 @@ Created by: Blake Ellsworth, Chris Logan, Angela Kwarkoh
   Estimate Cost is calculated by multiplying the kWh by the cost of electricity (6.3496¢)
   (Cost = 9.576 * 0.063496¢ = 0.6080)
 
-
-* A sample of how the information should be displayed to the user is as follows:
-  "Your Television daily cost is: $xx"
-  "Your Television weekly cost is: $xx"
-  "Your Television 30-day cost is: $xx"
-  "Your Television annual cost is: $xx"
-  "Your total electric cost from all appliances is: $xx"
-  
+* Sample displays for the user:
+    Your television daily cost = $xx
+    Your television weekly cost = $xx
+    Your television 30-day cost = $xx
+    Your television annual cost = $xx
+    Your total 30-day cost = $xx
   
 * References:
   * Estimate costs per state:
