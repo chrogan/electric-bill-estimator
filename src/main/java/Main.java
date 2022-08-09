@@ -22,6 +22,7 @@ public class Main {
     double power = electricity.getDevicePower();
     double KWH = electricity.getDeviceKWH();
 
+
     System.out.println(power);
     System.out.println(KWH);
 

@@ -1,3 +1,4 @@
+
 public class Electricity {
 
   //Fields
@@ -23,10 +24,10 @@ public class Electricity {
   // Returns in kWh/power per hours
   private double deviceKWH() {
     double deviceKWH = devicePower() * hours;
+
     return deviceKWH;
   }
 
-  //Returns in kW/power
   private double devicePower() {
 
     double result = (volts * amps) / 1000.0;
@@ -36,10 +37,12 @@ public class Electricity {
   //ACCESSORS AND MODIFIERS
 
   public double getDeviceKWH() {
-    return deviceKWH();
+    return deviceKWHCalculator();
   }
 
   public double getDevicePower() {
     return devicePower();
   }
+
+}
 }
