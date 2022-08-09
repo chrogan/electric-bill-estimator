@@ -1,25 +1,33 @@
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Map;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class StateCosts {
 
   public static void main(String[] args) throws Exception {
-    String line = "";
+//    String line = "";
     String splitBy = ",";
 
     try {
-      String Montana = Files.readAllLines(Paths.get("src/main/resources/state-costs.csv")).get(41);
-      String[] states = Montana.split(splitBy);
-      double RATES = Double.parseDouble(states[1]);
-      System.out.println(RATES);
+
+      Map<String, Double> rates = Files  //rates.get(NM)
+          .lines(Paths.get("src/main/resources/state-costs.csv"))
+          .map((line)->line.trim().split("\\s*,\\s*"))
+          .collect(Collectors.toMap((parts) -> parts[0], (parts) -> Double.valueOf(parts[1])));
+          System.out.println(rates);
+//      String Montana = Files.readAllLines(Paths.get("src/main/resources/state-costs.csv")).get(41);
+//      String[] states = Montana.split(splitBy);
+//      double RATES = Double.parseDouble(states[1]);
+
 
     } catch (IOException e) {
       e.printStackTrace();
     }
 
-    //  This is used to print out the entire file for testing purposes. *Intentionally left out*
+//      This is used to print out the entire file for testing purposes. *Intentionally left out*
 //    try {
 //      //parsing a CSV file into Scanner class Constructor
 //      BufferedReader br = new BufferedReader(new FileReader("src/main/resources/state-costs.csv"));
