@@ -55,4 +55,7 @@ Created by: Blake Ellsworth, Chris Logan, Angela Kwarkoh
     https://www.eia.gov/electricity/monthly/epm_table_grapher.php?t=epmt_5_6_a
   * Cost calculator and Watt conversions added in docs folder.
   * How to read a CSV File in Java: https://www.javatpoint.com/how-to-read-csv-file-in-java
+  * Average Energy prices for the US:
+    https://www.bls.gov/regions/midwest/data/averageenergyprices_selectedareas_table.htm
+  
     
