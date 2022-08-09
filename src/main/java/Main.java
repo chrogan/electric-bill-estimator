@@ -12,9 +12,11 @@ public class Main {
     Electricity electricity = new Electricity(tv);
 
 
-    double power = electricity.getPowerPerDevice();
+    double power = electricity.getDevicePower();
     double Kwh = electricity.getDeviceKWH();
     double totalKWH = electricity.getTotalPower();
+
+    System.out.println(Electricity.devices);
     System.out.println(power);
     System.out.println(Kwh);
     System.out.println(totalKWH);
