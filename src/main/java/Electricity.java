@@ -1,27 +1,30 @@
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Electricity {
 
   //Fields
 
   private static int instanceCount = 0;
 
-  public double deviceKWH;
   public double volts;
   public double amps;
   public double hours;
+  public static double totalPower;
 
+public static List<Appliance> devices = new ArrayList<>();
 
   //Constructors
   public Electricity() {
-    instanceCount++;
 
   }
   public Electricity(Appliance appliance) {
     this.volts = appliance.getVoltage();
     this.amps = appliance.getAmps();
     this.hours = appliance.getHours();
-  }
+
 
 
   //METHODS
@@ -55,4 +58,5 @@ public class Electricity {
     return devicePower();
   }
 
+}
 }
