@@ -1,23 +1,31 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class Bill {
 
-
+  private static double deviceBill;
   //FIELDS
   double KWH;
-  double rate = 0.1374;
+  double rate = 0.160;
+  public static int instanceCount = 0;
+
+  List<Double> totalBill = new ArrayList<>();
 
   //CONSTRUCTORS
   public Bill() {
+    instanceCount++;
   }
-
-  public Bill(Electricity electricity) {
-    this.KWH = electricity.getDeviceKWH();
+  public Bill(Appliance apppliance) {
+    this.KWH = apppliance.getDeviceKWH();
+    totalBill.add(apppliance.getDeviceKWH());
   }
 
 
   //METHODS
   public double deviceBillDay() {
-    double result = KWH * rate;
-    return result;
+     this.deviceBill = KWH * rate;
+    return deviceBill;
   }
 
   private double billWeek() {
@@ -33,6 +41,12 @@ public class Bill {
   private double billYear() {
     double result = deviceBillDay() * 365;
     return result;
+  }
+
+  public static double total() {
+    double hopefullyWorks = 0;
+    hopefullyWorks += deviceBill;
+    return hopefullyWorks;
   }
 
   //ACCESSORS

@@ -16,16 +16,11 @@ public class Main {
     Appliance microwave = new Appliance(240, 20.0, 0.5);
     Appliance lighting = new Appliance(120,15, 10 );
 
-    Electricity electricity = new Electricity(tv);
-    Electricity electricity1 = new Electricity(AC);
+    System.out.println(AC.totalKWH);
+    System.out.println(AC.getDeviceKWH());
 
-    double power = electricity.getDevicePower();
-    double KWH = electricity.getDeviceKWH();
-
-
-    System.out.println(power);
-    System.out.println(KWH);
-
+    System.out.println(heater.getDeviceKWH());
+    System.out.println(heater.getTotalKWH());
 
   }
 
