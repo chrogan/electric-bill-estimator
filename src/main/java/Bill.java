@@ -3,39 +3,69 @@ public class Bill {
 
   //FIELDS
   double KWH;
-  double rate = 0.1374;
+  public double totalKWH;
+  double rate = 0.160;
+
 
   //CONSTRUCTORS
   public Bill() {
   }
 
-  public Bill(Electricity electricity) {
-    this.KWH = electricity.getDeviceKWH();
+  public Bill(Appliance appliance) {
+    this.KWH = appliance.getDeviceKWH();
+    this.totalKWH = appliance.getTotalKWH();
   }
 
 
   //METHODS
-  public double deviceBillDay() {
-    double result = KWH * rate;
-    return result;
+  private double deviceBillDay() {
+    double deviceBill = KWH * rate;
+    return deviceBill;
   }
 
-  private double billWeek() {
-    double result = deviceBillDay() * 7;
-    return result;
-  }
-
-  private double billMonth() {
-    double result = deviceBillDay() * 30;
-    return result;
-  }
-
-  private double billYear() {
-    double result = deviceBillDay() * 365;
-    return result;
+  private double DayBill() {
+    double sum = totalKWH * rate;
+    return sum;
   }
 
   //ACCESSORS
+  //per device
+  public double getDeviceDailyBill() {
+    return deviceBillDay();
+  }
 
+  public double getDeviceWeeklyBill() {
+    return deviceBillDay() * 7.0;
+  }
+
+  public double getDeviceMonthlyBill() {
+    return deviceBillDay() * 30.0;
+  }
+
+  public double getDeviceYearlyBill() {
+    return deviceBillDay() * 365.0;
+  }
+
+
+  //totals for bill
+  public double getDailyBill() {
+    return DayBill();
+  }
+
+  public double getWeeklyBill() {
+    return DayBill() * 7.0;
+  }
+
+  public double getMonthlyBill() {
+    return DayBill() * 30.0;
+  }
+
+  public double getYearlyBill() {
+    return DayBill() * 365.0;
+  }
 
 }
+
+
+
+
