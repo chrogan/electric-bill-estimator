@@ -1,5 +1,3 @@
-
-
 public class Main {
 
   /**
@@ -26,7 +24,6 @@ public class Main {
     System.out.printf("Your daily bill is $%1.2f\n", bill.getDailyBill());
     System.out.printf("Your monthly bill is $%1.2f\n", bill.getMonthlyBill());
     System.out.printf("Your yearly bill is $%1.2f\n", bill.getYearlyBill());
-
 
   }
 
