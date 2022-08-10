@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class Appliance {
 
@@ -10,12 +9,14 @@ public class Appliance {
   public double voltage = 120.0;
   public double amps = 12.5;
   public double hours = 10;
+  public static int instanceCount;
 
- static List<Double> totalKWH = new ArrayList<>();
+  static List<Double> totalKWH = new ArrayList<>();
 
   //CONSTRUCTORS
   public Appliance() {
   }
+
   public Appliance(double voltage, double amps, double hours) {
     this.voltage = setVoltage(voltage);
     this.amps = setAmps(amps);
@@ -25,22 +26,23 @@ public class Appliance {
 
 
   //METHODS
-  private double deviceKWH(){
+  private double deviceKWH() {
     KWH = voltage * amps * hours / 1000;
     return KWH;
   }
 
-  private double totalKWH(){
-    double sum = totalKWH.stream().reduce(0.0,Double::sum);
+  private double totalKWH() {
+    double sum = totalKWH.stream().reduce(0.0, Double::sum);
     return sum;
   }
 
 
   //ACCESSORS AND MODIFIERS
-  public double getDeviceKWH(){
+  public double getDeviceKWH() {
     return KWH;
   }
-  public double getTotalKWH(){
+
+  public double getTotalKWH() {
     return totalKWH();
   }
 

@@ -1,55 +1,71 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 public class Bill {
 
-  private static double deviceBill;
+
   //FIELDS
   double KWH;
+  public double totalKWH;
   double rate = 0.160;
-  public static int instanceCount = 0;
 
-  List<Double> totalBill = new ArrayList<>();
 
   //CONSTRUCTORS
   public Bill() {
-    instanceCount++;
   }
-  public Bill(Appliance apppliance) {
-    this.KWH = apppliance.getDeviceKWH();
-    totalBill.add(apppliance.getDeviceKWH());
+
+  public Bill(Appliance appliance) {
+    this.KWH = appliance.getDeviceKWH();
+    this.totalKWH = appliance.getTotalKWH();
   }
 
 
   //METHODS
-  public double deviceBillDay() {
-     this.deviceBill = KWH * rate;
+  private double deviceBillDay() {
+    double deviceBill = KWH * rate;
     return deviceBill;
   }
 
-  private double billWeek() {
-    double result = deviceBillDay() * 7;
-    return result;
-  }
-
-  private double billMonth() {
-    double result = deviceBillDay() * 30;
-    return result;
-  }
-
-  private double billYear() {
-    double result = deviceBillDay() * 365;
-    return result;
-  }
-
-  public static double total() {
-    double hopefullyWorks = 0;
-    hopefullyWorks += deviceBill;
-    return hopefullyWorks;
+  private double DayBill() {
+    double sum = totalKWH * rate;
+    return sum;
   }
 
   //ACCESSORS
+  //per device
+  public double getDeviceDailyBill() {
+    return deviceBillDay();
+  }
 
+  public double getDeviceWeeklyBill() {
+    return deviceBillDay() * 7.0;
+  }
+
+  public double getDeviceMonthlyBill() {
+    return deviceBillDay() * 30.0;
+  }
+
+  public double getDeviceYearlyBill() {
+    return deviceBillDay() * 365.0;
+  }
+
+
+  //totals for bill
+  public double getDailyBill() {
+    return DayBill();
+  }
+
+  public double getWeeklyBill() {
+    return DayBill() * 7.0;
+  }
+
+  public double getMonthlyBill() {
+    return DayBill() * 30.0;
+  }
+
+  public double getYearlyBill() {
+    return DayBill() * 365.0;
+  }
 
 }
+
+
+
+

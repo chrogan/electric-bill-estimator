@@ -16,11 +16,17 @@ public class Main {
     Appliance microwave = new Appliance(240, 20.0, 0.5);
     Appliance lighting = new Appliance(120,15, 10 );
 
-    System.out.println(AC.totalKWH);
-    System.out.println(AC.getDeviceKWH());
 
-    System.out.println(heater.getDeviceKWH());
-    System.out.println(heater.getTotalKWH());
+    Bill bill = new Bill(AC);
+
+    System.out.printf("Your daily bill for Air Conditioning is $%1.2f\n", bill.getDeviceDailyBill());
+    System.out.printf("Your monthly bill for Air Conditioning is $%1.2f\n", bill.getDeviceDailyBill());
+    System.out.printf("Your yearly bill for Air Conditioning is $%1.2f\n", bill.getDeviceYearlyBill());
+
+    System.out.printf("Your daily bill is $%1.2f\n", bill.getDailyBill());
+    System.out.printf("Your monthly bill is $%1.2f\n", bill.getMonthlyBill());
+    System.out.printf("Your yearly bill is $%1.2f\n", bill.getYearlyBill());
+
 
   }
 
