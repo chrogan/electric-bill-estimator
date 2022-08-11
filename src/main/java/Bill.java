@@ -1,13 +1,9 @@
 public class Bill {
 
-  public double totalKWH;
+  public static double totalKWH;
   //FIELDS
   double KWH;
-
-  public static double totalKWH;
-  static double rate = 0.1113;
-
-  double rate = 0.160; //this is the avg state cost for electricity
+  static double rate = 0.1113;//this is the avg state cost for electricity
 
 
   //CONSTRUCTORS
@@ -57,13 +53,10 @@ public class Bill {
 
 
   //totals for bill
-  public static double getDailyBill() {
-    return dayBill();
 
   //calculates a 1 day cost value
-  public double getDailyBill() {
-    return DayBill();
-
+  public static double getDailyBill() {
+    return dayBill();
   }
 
   //calculates a 7 day value
