@@ -3,8 +3,8 @@ public class Bill {
 
   //FIELDS
   double KWH;
-  public double totalKWH;
-  double rate = 0.160;
+  public static double totalKWH;
+  static double rate = 0.1113;
 
 
   //CONSTRUCTORS
@@ -14,18 +14,24 @@ public class Bill {
   public Bill(Appliance appliance) {
     this.KWH = appliance.getDeviceKWH();
     this.totalKWH = appliance.getTotalKWH();
+    //this.rate = Main.rate;
   }
 
-
   //METHODS
+
   private double deviceBillDay() {
     double deviceBill = KWH * rate;
     return deviceBill;
   }
 
-  private double DayBill() {
-    double sum = totalKWH * rate;
-    return sum;
+  private static double dayBill() {
+    double result = totalKWH * rate;
+    return result;
+  }
+
+  private double percentageOfBill() {
+    double percent = (deviceBillDay() / dayBill()) * 100.0;
+    return percent;
   }
 
   //ACCESSORS
@@ -48,20 +54,25 @@ public class Bill {
 
 
   //totals for bill
-  public double getDailyBill() {
-    return DayBill();
+  public static double getDailyBill() {
+    return dayBill();
   }
 
   public double getWeeklyBill() {
-    return DayBill() * 7.0;
+    return dayBill() * 7.0;
   }
 
   public double getMonthlyBill() {
-    return DayBill() * 30.0;
+    return dayBill() * 30.0;
   }
 
   public double getYearlyBill() {
-    return DayBill() * 365.0;
+    return dayBill() * 365.0;
+  }
+
+  //percentage of bills
+  public double getPercentage() {
+    return percentageOfBill();
   }
 
 }
