@@ -1,11 +1,9 @@
 public class Bill {
 
-
+  public double totalKWH;
   //FIELDS
   double KWH;
-  public double totalKWH;
-  double rate = 0.160;
-
+  double rate = 0.160; //this is the avg state cost for electricity
 
   //CONSTRUCTORS
   public Bill() {
@@ -19,7 +17,7 @@ public class Bill {
 
   //METHODS
   private double deviceBillDay() {
-    double deviceBill = KWH * rate;
+    double deviceBill = KWH * rate;  //calculates the actual cost of electricity
     return deviceBill;
   }
 
@@ -47,19 +45,22 @@ public class Bill {
   }
 
 
-  //totals for bill
+  //calculates a 1 day cost value
   public double getDailyBill() {
     return DayBill();
   }
 
+  //calculates a 7 day value
   public double getWeeklyBill() {
     return DayBill() * 7.0;
   }
 
+  //calculates a 30 day value
   public double getMonthlyBill() {
     return DayBill() * 30.0;
   }
 
+  //calculates a 365-day value
   public double getYearlyBill() {
     return DayBill() * 365.0;
   }

@@ -5,14 +5,13 @@ import java.util.stream.Collectors;
 public class Appliance {
 
 
+  public static int instanceCount;
+  static List<Double> totalKWH = new ArrayList<>();
   //FIELDS
   public double KWH;
   public double voltage = 120.0;
   public double amps = 12.5;
   public double hours = 10;
-  public static int instanceCount;
-
-  static List<Double> totalKWH = new ArrayList<>();
 
   //CONSTRUCTORS
   public Appliance() {
