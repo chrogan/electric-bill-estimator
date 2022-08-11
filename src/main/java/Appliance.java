@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class Appliance {
 
@@ -12,6 +11,9 @@ public class Appliance {
   public double voltage = 120.0;
   public double amps = 12.5;
   public double hours = 10;
+
+  static List<Double> totalKWH = new ArrayList<>();
+
 
   //CONSTRUCTORS
   public Appliance() {
@@ -27,12 +29,14 @@ public class Appliance {
 
 
   //METHODS
+  //returns KWH which is power.
   private double deviceKWH() {  //This calculates kWh
     KWH = voltage * amps * hours / 1000;
     return KWH;
   }
 
-  private double totalKWH() { //changes all of the values of kWh into one total sum.
+  //returns the sum of totalKWH
+  private static double totalKWH() {//changes all of the values of kWh into one total sum.
     double sum = totalKWH.stream().reduce(0.0, Double::sum);
     return sum;
   }
@@ -43,9 +47,10 @@ public class Appliance {
     return KWH;
   }
 
-  public double getTotalKWH() {
+  public static double getTotalKWH() {
     return totalKWH();
   }
+
 
   //volts
   public double getVoltage() {
