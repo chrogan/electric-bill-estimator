@@ -12,7 +12,6 @@ public class Appliance {
   public double amps = 12.5;
   public double hours = 10;
 
-  static List<Double> totalKWH = new ArrayList<>();
 
 
   //CONSTRUCTORS
