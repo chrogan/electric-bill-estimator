@@ -10,21 +10,23 @@ Created by: Blake Ellsworth, Chris Logan, Angela Kwarkoh
 
 * We have included multiple default values for various appliances. These values include
   amps, voltage, hours of use per day, and cost per kWh.
-  These values are calculated into an estimated cost to use for a 30-day period. The user can
-  can change the default values to a more accurate representation of their own home / appliances.
+  These values are calculated into an estimated cost to use for a day, week, 30-day period, and a
+  year. The user can can change the default values to a more accurate representation of their
+  own home or appliances.
 
 
 * An example for how this system works.
-  User inputs: Monitor, 19V, 2.1A, 8 hours, Oklahoma. The system will automatically calculate the
-  information given and convert this into an estimate 30 day cost value.
+  User inputs: The state they live in. Monitor, 19V, 2.1A, 8 hours, Oklahoma. The system will
+  automatically calculate the information given and convert this into an estimate day, week,
+  30-day, and annual cost value.
 
 
 * Common questions:
   Q: Where do the default values come from?
   A: The values were found from various appliances around our homes
   Q: Where did the cost of electricity come from?
-  A: The default value cost for electricity is set to "6.3496¢" based on PS Oklahoma cost value.
-  Q: What if I use less hours that I originally thought?
+  A: The cost for electricity is set to the average state cost values from year 2022.
+  Q: What if I use less hours that I originally planned for?
   A: This is only an estimator for values and does not necessarily reflect an accurate
   representation of your home bill.
   Q: What if my appliance is not listed on here?
@@ -50,14 +52,17 @@ Created by: Blake Ellsworth, Chris Logan, Angela Kwarkoh
   Your television annual cost = $xx
   Your total 30-day cost = $xx
 
+
 * References:
-    * Estimate costs per state:
-      https://www.eia.gov/electricity/monthly/epm_table_grapher.php?t=epmt_5_6_a
-    * Cost calculator and Watt conversions added in docs folder.
-    * How to read a CSV File in Java: https://www.javatpoint.com/how-to-read-csv-file-in-java
     * Average Energy prices for the US:
       https://www.bls.gov/regions/midwest/data/averageenergyprices_selectedareas_table.htm
+    * Cost calculator and Watt conversions added in docs folder.
+    * Estimate costs per state:
+      https://www.eia.gov/electricity/monthly/epm_table_grapher.php?t=epmt_5_6_a
+    * Extra assistance from: Nick Bennett for instructional purposes and coding assistance
+    * How to read a CSV File in Java: https://www.javatpoint.com/how-to-read-csv-file-in-java
     * Reading specific lines in CSV file:
       https://stackoverflow.com/questions/2312756/how-to-read-a-specific-line-using-the-specific-line-number-from-a-file-in-java
+
   
     
