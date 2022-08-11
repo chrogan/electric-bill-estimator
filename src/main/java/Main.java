@@ -13,8 +13,10 @@ public class Main {
 
   /**
    * Creates a class for users to calculate estimate electric costs using default or input values.
-   * This calculator uses either the default pre-set values for multiple appliances or user input.
-   * If the user inputs invalid values then an instance of {@link java.io.IOException} is thrown.
+   * This program implements {@link Map} to find key values for average electric costs per state.
+   * The calculator then uses either the values for the amount of appliances the user selects.
+   * If the user inputs invalid values then an instance of {@link java.io.IOException} is thrown. A
+   * {@link Scanner} and {@link TreeMap} are used to allow user input.
    */
   public static void main(String[] args) {
     //Gets the rate from a specific state after user input
@@ -65,6 +67,7 @@ public class Main {
         appliances.put(name, appliance);
       }
     }
+    //this lines of code below have large spaces intentionally
     System.out.printf("Appliance            Volts    Amps    Hrs        KWH\n");
     for (Map.Entry<String, Appliance> entry : appliances.entrySet()) {
       Appliance appliance = entry.getValue();
