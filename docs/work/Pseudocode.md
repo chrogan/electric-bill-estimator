@@ -16,7 +16,12 @@ Created by: Blake Ellsworth, Chris Logan, Angela Kwarkoh
 
 
 * An example for how this system works.
-  User inputs: The state they live in. Monitor, 19V, 2.1A, 8 hours, Oklahoma. The system will
+  User inputs: The state they live in such as NY. The system then asks how many appliances the user
+  would like to register. It then asks for the name of the appliance(s) for registration.
+  Afterwards, the user inputs the voltage, amperage, and how many hours a day this item is used.
+  Afterwards the system will print out the registered devices with the information from the user
+  As well as printing out the total cost from all devices.
+* Monitor, 19V, 2.1A, 8 hours, Oklahoma. The system will
   automatically calculate the information given and convert this into an estimate day, week,
   30-day, and annual cost value.
 
