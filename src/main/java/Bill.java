@@ -17,7 +17,7 @@ public class Bill {
   public Bill(Appliance appliance) {
     this.KWH = appliance.getDeviceKWH();
     this.totalKWH = appliance.getTotalKWH();
-    //this.rate = Main.rate;
+    this.rate = Main.rate;
   }
 
   //METHODS
