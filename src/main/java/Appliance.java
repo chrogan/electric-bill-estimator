@@ -4,6 +4,8 @@ import java.util.List;
 public class Appliance {
 
 
+  public static int instanceCount;
+  static List<Double> totalKWH = new ArrayList<>();
   //FIELDS
   public double KWH;
   public double voltage = 120.0;
@@ -11,6 +13,7 @@ public class Appliance {
   public double hours = 10;
 
   static List<Double> totalKWH = new ArrayList<>();
+
 
   //CONSTRUCTORS
   public Appliance() {
