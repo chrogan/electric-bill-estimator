@@ -24,37 +24,38 @@ public class Main {
     System.out.printf("Please provide the state abbreviation of your residency:\n"
         + "(example: Enter 'NY' for New York or 'CO' for Colorado)\n ");
     String state = scanner.nextLine();
-    try {
-      Map<String, Double> states = Files  //This calls values from the statescosts.csv file states.get(NM)
-          .lines(Paths.get("src/main/resources/state-costs.csv"))
-          .map((line) -> line.trim().split("\\s*,\\s*"))
-          .collect(Collectors.toMap((parts) -> parts[0], (parts) -> Double.valueOf(parts[1])));
-      System.out.println("The average electricity cost in " + state + " = $" + states.get(state));
-      rate = states.get(state);
+      try {
+        Map<String, Double> states = Files  //This calls values from the statescosts.csv file states.get(NM)
+            .lines(Paths.get("src/main/resources/state-costs.csv"))
+            .map((line) -> line.trim().split("\\s*,\\s*"))
+            .collect(Collectors.toMap((parts) -> parts[0], (parts) -> Double.valueOf(parts[1])));
+        System.out.println("The average electricity cost in " + state + " = $" + states.get(state));
+        rate = states.get(state);
 
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
 
     System.out.printf("How many appliances would you like to register?\n");
     int numAppliances = scanner.nextInt();
 
     Map<String, Appliance> appliances = new TreeMap<>();
-
     Set<String> names = appliances.keySet();
+
     String name;
     for (int i = 0; i < numAppliances; i++) {
       scanner.nextLine();
+      System.out.println();
       System.out.printf("Which appliance would you like to register?\n" +
-          "examples: Television, Air Conditioning, Dishwasher, Microwave\n");
+          "Examples: Television, Air Conditioning, Dishwasher, Microwave, etc.\n");
       name = scanner.nextLine();
       if (appliances.containsKey(name)) {
         System.out.println("Sorry you already gave that name. Please insert a new device.");
       }
       while (!appliances.containsKey(name)) {
         System.out.printf("What is the voltage required for this appliance?\n"
-            + "(Note: Most appliances in the United States have a voltage from"
-            + " 110-120 volts or 220 -240 volts.\n");
+            + "Note: Most appliances in the United States have a voltage from"
+            + " 110-120 volts or 220-240 volts.\n");
         double volts = scanner.nextInt();
 
         System.out.printf("What is the amperage required for this appliance?\n");
@@ -67,23 +68,26 @@ public class Main {
         appliances.put(name, appliance);
       }
     }
-    //this lines of code below have large spaces intentionally
-    System.out.printf("Appliance            Volts    Amps    Hrs        KWH\n");
+    System.out.println("=======================================================");
+    System.out.printf("Appliance            Volts    Amps     Hrs       KWH\n");
+    System.out.println("=======================================================");
     for (Map.Entry<String, Appliance> entry : appliances.entrySet()) {
       Appliance appliance = entry.getValue();
       System.out.printf("%-20s%6.0f%8.2f%8.2f%10.2f%n", entry.getKey(), appliance.voltage,
           appliance.amps, appliance.hours, appliance.getDeviceKWH());
     }
     System.out.println();
-    System.out.printf("Appliance           $Appl     %%ofBill\n");
+    System.out.println("=======================================================");
+    System.out.printf("Appliance            $Appl       %%ofBill     TotalBill\n");
+    System.out.println("=======================================================");
     for (Map.Entry<String, Appliance> entry : appliances.entrySet()) {
       Appliance appliance = entry.getValue();
       Bill bill = new Bill(appliance);
-      System.out.printf("%-20s$%-6.2f%8.2f%%%n", entry.getKey(), bill.getDeviceMonthlyBill(),
-          bill.getPercentage());
-      System.out.printf("%nYour total monthly bill is approximately: $%1.2f",
-          bill.getMonthlyBill());
+      System.out.printf("%-21s$%-12.2f%-10.2f   $%6.2f%n", entry.getKey(), bill.getDeviceMonthlyBill(),
+          bill.getPercentage(),bill.getWeeklyBill());
     }
+    System.out.println("_______________________________________________________\n");
+  }
 
   }
 }
